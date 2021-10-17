@@ -1,0 +1,101 @@
+html {
+  font-family: "Roboto", sans-serif;
+}
+
+#header {
+  background-color: rgba(51, 51, 51, 255);
+  text-align: center;
+  height: 30%;
+  margin-top: 0;
+}
+.mylogo {
+  width: 50%;
+}
+.mynavbar {
+  display: inline-flex;
+  margin-left: auto;
+  margin-right: auto;
+}
+.navtext {
+  font-size: large;
+  color: white;
+  margin: 0.5rem 2rem 0 2rem;
+}
+.myrow1 {
+  display: flex;
+  height: 2rem;
+  margin-bottom: 1rem;
+  margin-left: auto;
+  margin-left: auto;
+}
+.title {
+  font-size: 1.5rem;
+  color: black;
+  opacity: 0.88;
+}
+#overview {
+  margin-left: 15rem;
+}
+.appLink {
+  color: rgba(51, 51, 51, 255);
+  display: inline;
+  padding-right: 20px;
+}
+#bold {
+  text-align: center;
+  font-size: 3rem;
+  margin: 5rem auto 5rem auto;
+}
+#bold2{
+  text-align: center;
+  font-size: 3rem;
+  margin: 5rem auto 5rem auto;
+}
+.black {
+  font-size: 1rem;
+  color: black;
+  font-weight: 500;
+}
+
+.grey {
+  color: rgba(128, 128, 128, 0.924);
+  font-weight: 500;
+  font-size: smaller;
+}
+
+.myrow3 {
+  margin-bottom: 5rem;
+}
+.addbutton {
+  margin-top: 1rem;
+  margin-right: 7.5rem;
+  margin-left: 7.5rem;
+}
+.id{
+  visibility: hidden;
+}
+main {
+  padding-bottom: 10rem;
+}
+footer {
+    background-color: rgba(51, 51, 51, 255);
+    text-align: center;
+    height: 3rem;
+    color: white;
+    padding-top: 0.5rem;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+table{
+ text-align: center;
+ padding: auto;
+ margin-left: 27%;
+}
+thead{
+  font-weight: 700;
+  font-size: 1rem;
+}
+#carttoappear{
+  visibility:hidden;
+}
