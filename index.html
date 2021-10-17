@@ -187,7 +187,9 @@
         <div class="col-4">
           <div class="card" style="width: 24rem">
             <img
-              src="./images/watch1.2.jpeg"
+              src="./images/watch1.2.jpeg" 
+              onmouseover = "this.src ='./images/watch1.1.jpeg';"
+              onmouseout="this.src='./images/watch1.2.jpeg';"
               class="card-img-top"
               alt="iWatch1"
             />
@@ -217,6 +219,8 @@
           <div class="card" style="width: 24rem">
             <img
               src="./images/watch2.2.jpeg"
+              onmouseover="this.src='./images/watch2.1.jpeg';"
+              onmouseout="this.src='./images/watch2.2.jpeg';"
               class="card-img-top"
               alt="iWatch2"
             />
@@ -246,6 +250,8 @@
           <div class="card" style="width: 24rem">
             <img
               src="./images/watch3.2.jpeg"
+              onmouseover="this.src='./images/watch3.1.jpeg';"
+              onmouseout="this.src='./images/watch3.2.jpeg';"
               class="card-img-top"
               alt="iWatch3"
             />
@@ -283,8 +289,11 @@
             <td>Price</td>
             <td>SubTotal</td>
           </thead>
-          <div id="mycart"></div>
+          <div id="mycart"> </div>
         </table>
+        <hr>
+
+        <h4>Total: <div id="totalPrice"></div></h4>
      </div>
     </main>
     <footer>JustForPractice.Co No Rights Reserved. 2021</footer>

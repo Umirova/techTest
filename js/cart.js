@@ -1,53 +1,52 @@
-
-const createCartHtml = (
-    name,
-    quantity,
-    price,
-    subtotal
-) =>{
-const html = 
-`  <tr>
+const createCartHtml = (name, quantity, price, subtotal) => {
+  const html = `  <tr>
 <td>${name}</td>
 <td>${quantity}</td>
 <td>${price}</td>
 <td>${subtotal}</td>
-</tr>`
-return html;
+</tr>`;
+  return html;
 };
 
+class Cart {
+  constructor() {
+    this.items = [];
+  }
+  addItem(name, quantity, price, subtotal) {
+    let item = {
+      name: name,
+      quantity: quantity,
+      price: price,
+      subtotal: subtotal,
+    };
+    this.items.push(item);
+    console.log(this.items);
+  }
+  render() {
+    let itemsHtmlList = [];
+    for (let i = 0; i < this.items.length; i++) {
+      const item = this.items[i];
+      const itemHtml = createCartHtml(
+        item.name,
+        item.quantity,
+        item.price,
+        item.subtotal
+      );
+      itemsHtmlList.push(itemHtml);
+    }
+    const itemsHtml = itemsHtmlList.join("\n");
+    const itemList = document.getElementById("mycart");
+    itemList.innerHTML = itemsHtml;
+  }
 
-class Cart{
-    constructor(){
-        this.items = [];
+  save() {
+    let itemsJson = JSON.stringify(this.items);
+    localStorage.setItem("items", itemsJson);
+  }
+  load() {
+    if (localStorage.getItem("items")) {
+      let itemsJson = localStorage.getItem("items");
+      this.items = JSON.parse(itemsJson);
     }
-    addItem(name, quantity, price, subtotal){
-        let item = {
-            name: name,
-            quantity: quantity,
-            price: price,
-            subtotal: subtotal,
-        }
-        this.items.push(item);
-        console.log(this.items);
-    }
-    render(){
-        let itemsHtmlList = [];
-        for (let i=0; i<this.items.length; i++){
-            const item = this.items[i];
-            const itemHtml = createCartHtml(
-                item.name,
-                item.quantity,
-                item.price,
-                item.subtotal
-            );
-            itemsHtmlList.push(itemHtml);
-        }
-        const itemsHtml = itemsHtmlList.join("\n");
-        const itemList = document.getElementById("mycart");
-        itemList.innerHTML = itemsHtml;
-    }
+  }
 }
-
-
-
-
