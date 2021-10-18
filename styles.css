@@ -68,8 +68,8 @@ html {
 }
 .addbutton {
   margin-top: 1rem;
-  margin-right: 7.5rem;
-  margin-left: 7.5rem;
+  margin-right: 6rem;
+  margin-left: 6rem;
 }
 .id{
   visibility: hidden;
@@ -90,7 +90,7 @@ footer {
 table{
  text-align: center;
  padding: auto;
- margin-left: 27%;
+ margin-left: 15%;
 }
 thead{
   font-weight: 700;
@@ -98,4 +98,7 @@ thead{
 }
 #carttoappear{
   visibility:hidden;
+}
+#bin{
+  width: 0.8rem;
 }

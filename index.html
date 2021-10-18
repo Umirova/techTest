@@ -23,7 +23,7 @@
     <!-- Adding JS -->
     <script src="./js/cart.js" defer></script>
     <script src="./js/index.js" defer></script>
-    
+
     <!-- font Roboto -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -116,7 +116,10 @@
               </li>
 
               <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="./bag.html"
+                <a
+                  class="nav-link active"
+                  aria-current="page"
+                  href="./cart.html"
                   ><img class="mylogo" src="./images/bag.png"
                 /></a>
               </li>
@@ -148,6 +151,7 @@
       </div>
 
       <div class="row myrow3 d-flex justify-content-center">
+        <!-- overall description -->
         <div class="col-3" style="width: 16rem">
           <img src="./images/1.jpeg" />
           <h4 class="black">Largest Display</h4>
@@ -156,6 +160,7 @@
             cent more screen area than Series 6.
           </p>
         </div>
+
         <div class="col-3" style="width: 16rem">
           <img src="./images/2.jpeg" />
           <h4 class="black">Improved Durability</h4>
@@ -164,6 +169,7 @@
             swim-proof.<sup>1</sup>
           </p>
         </div>
+
         <div class="col-3" style="width: 16rem">
           <img src="./images/3.jpeg" />
           <h4 class="black">Fast Charging</h4>
@@ -183,22 +189,25 @@
         </div>
       </div>
 
-      <div class="row myrow5">
-        <div class="col-4">
-          <div class="card" style="width: 24rem">
+      <div class="row myrow5" id="itemList">
+        <div class="col-4 d-flex align-items-stretch">
+          <!-- card for item 1 -->
+          <div class="card" style="width: 22rem">
             <img
-              src="./images/watch1.2.jpeg" 
-              onmouseover = "this.src ='./images/watch1.1.jpeg';"
+              src="./images/watch1.2.jpeg"
+              onmouseover="this.src ='./images/watch1.1.jpeg';"
               onmouseout="this.src='./images/watch1.2.jpeg';"
               class="card-img-top"
               alt="iWatch1"
             />
             <div class="card-body">
-              <h5 class="card-title" id="name1">Green Aluminium Case with Leather Link</h5>
+              <h5 class="card-title" id="name1">
+                Green Aluminium Case with Leather Link
+              </h5>
 
-              <div class="id" id="id1">1</div>
+              <div class="id" id="id1"></div>
               <p class="card-text">A$669</p>
-              
+
               <!-- input form -->
               <input
                 class="form-control"
@@ -215,8 +224,10 @@
             </div>
           </div>
         </div>
-        <div class="col-4">
-          <div class="card" style="width: 24rem">
+
+        <!-- card for item 2 -->
+        <div class="col-4 d-flex align-items-stretch">
+          <div class="card" style="width: 22rem">
             <img
               src="./images/watch2.2.jpeg"
               onmouseover="this.src='./images/watch2.1.jpeg';"
@@ -226,7 +237,7 @@
             />
             <div class="card-body">
               <h5 class="card-title" id="name2">
-              (PRODUCT)RED Aluminium Case with Braided Solo Loop
+                (PRODUCT)RED Aluminium Case with Braided Solo Loop
               </h5>
               <div class="id" id="id2">2</div>
               <p class="card-text">A$669</p>
@@ -246,8 +257,9 @@
             </div>
           </div>
         </div>
-        <div class="col-4">
-          <div class="card" style="width: 24rem">
+        <!-- card for item 3 -->
+        <div class="col-4 d-flex align-items-stretch">
+          <div class="card" style="width: 22rem">
             <img
               src="./images/watch3.2.jpeg"
               onmouseover="this.src='./images/watch3.1.jpeg';"
@@ -256,11 +268,11 @@
               alt="iWatch3"
             />
             <div class="card-body">
-              <h5 class="card-title" id="name3" >
-              Graphite Stainless Steel Case with Milanese Loop
+              <h5 class="card-title" id="name3">
+                Graphite Stainless Steel Case with Milanese Loop
               </h5>
-              <div class="id" id="id3" value="3">3</div>
-              <p class="card-text" >A$1,119</p>
+              <div class="id" id="id3">3</div>
+              <p class="card-text">A$1,119</p>
               <!-- input form -->
               <input
                 class="form-control"
@@ -278,23 +290,29 @@
           </div>
         </div>
       </div>
-     <div id="carttoappear">
-      <h2 id="bold2">Bag</h2>
-      <hr />
-      <div>
-        <table style="width: 50%">
-          <thead>
-            <td>Item</td>
-            <td>Quantity</td>
-            <td>Price</td>
-            <td>SubTotal</td>
-          </thead>
-          <div id="mycart"> </div>
-        </table>
-        <hr>
+      <div id="carttoappear">
+        <h2 id="bold2">Bag</h2>
+        <hr />
+        <div>
+          <table style="width: 60%">
+            <thead>
+              <td>Items</td>
+              <td>Quantity</td>
+              <td>Price</td>
+              <td>SubTotal</td>
+              <td></td>
+            </thead>
 
-        <h4>Total: <div id="totalPrice"></div></h4>
-     </div>
+            <tbody id="mycart"></tbody>
+          </table>
+          <hr />
+
+          <h4>
+            Total:
+            <div id="totalPrice"></div>
+          </h4>
+        </div>
+      </div>
     </main>
     <footer>JustForPractice.Co No Rights Reserved. 2021</footer>
   </body>
