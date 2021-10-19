@@ -1,5 +1,7 @@
 const cart = new Cart();
 const finalCart = document.getElementById("carttoappear");
+const itemList = document.getElementById("itemList");
+const myCart = document.getElementById("mycart");
 
 function validation() {
   let name1 = document.getElementById("name1");
@@ -50,17 +52,20 @@ function validation() {
   }
 }
 
-const itemList = document.getElementById("itemList");
 itemList.addEventListener("click", (event) => {
   if (event.target.classList.contains("addbutton")) {
     validation();
-  }
+    cart.total();
+  };
+});
+
+mycart.addEventListener("click", (event) =>{
   if (event.target.classList.contains("delete-button")){
     let parentItem = event.target.parentElement.parentElement;
-    const itemId = Number(parentItem.dataset.itemName);;
+    const itemId = Number(parentItem.dataset.itemId);;
     cart.deleteItem(itemId);
+    cart.total();
     cart.save();
     cart.render();
   }
 });
-

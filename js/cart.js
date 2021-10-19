@@ -1,11 +1,13 @@
 const createCartHtml = (id, name, quantity, price, subtotal) => {
   const html = `  
-  <tr id="${id}">
-<td>${name}</td>
-<td>${quantity}</td>
-<td>${price}</td>
-<td>${subtotal}</td>
-<td><img class="delete-button" id="bin" src="./images/bin.png" ></td>
+  <tr id="${id}" data-item-id="${id}">
+    <td>${name}</td>
+    <td>${quantity}</td>
+    <td>${price}</td>
+    <td>${subtotal}</td>
+    <td>
+      <img class="delete-button" id="bin" src="./images/bin.png" >
+    </td>
 </tr>`;
   return html;
 };
@@ -21,7 +23,7 @@ class Cart {
       matchingItem.name = name;
       let a = Number(matchingItem.quantity);
       let b = Number(quantity);
-      matchingItem.quantity= a+b;
+      matchingItem.quantity = a + b;
       (matchingItem.price = price),
         (matchingItem.subtotal = matchingItem.quantity * matchingItem.price);
     }
@@ -36,8 +38,6 @@ class Cart {
       };
       this.items.push(item);
     }
-
-    // adding new item
   }
 
   render() {
@@ -52,10 +52,9 @@ class Cart {
         item.subtotal
       );
       itemsHtmlList.push(itemHtml);
-      console.log(itemsHtmlList);
     }
     const itemsHtml = itemsHtmlList.join("\n");
-    console.log(itemsHtml);
+
     const itemList = document.getElementById("mycart");
 
     itemList.innerHTML = itemsHtml;
@@ -82,5 +81,16 @@ class Cart {
     }
     this.items = newItems;
   }
-}
+  //calculating total price
+  total() {
+    let total = 0;
+    for (let i = 0; i < this.items.length; i++) {
+      let item = this.items[i];
+      let a = Number(item.subtotal);
+      total += a;
+    }
+    document.getElementById("totalPrice").innerHTML = total;
 
+
+  }
+}
